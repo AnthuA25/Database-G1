@@ -1,0 +1,26 @@
+#acceder a mysql
+mysql  -h localhost -u root -p
+#para ver las base de datos
+show databases;
+#para crear base de datoas
+create database cursos;
+#para ingresar a la base de datos
+use cursos
+#crear una tabla
+CREATE TABLE alumno(
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(200)
+);
+#para ver la tabla
+desc alumno
+#para insertar datos
+insert into alumno values('cesar mayta','cesarmayta@gmail.com');
+#para mostrar datos
+select * from alumno
+#para insertar varios registros
+insert into alumno values
+('Jose Luna','pepe@hotmail.com'),
+('Laura Lopez','laurital89@gmail.com');
+
+
+ 
