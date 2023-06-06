@@ -21,7 +21,7 @@ select * from alumnos
 where pais='Peru';
 
 -- numero de valores 
-select count(*) from alumnos 
+select count(*) nota,nota from alumnos 
 where nota > 10 
 and pais='Peru';
 
