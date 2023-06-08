@@ -44,13 +44,13 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `db_movilidad_escolar`.`tlb_grado`
+-- Table `db_movilidad_escolar`.`tbl_grado`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_movilidad_escolar`.`tlb_grado` (
-  `gradi_id` INT UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `db_movilidad_escolar`.`tbl_grado` (
+  `grado_id` INT NOT NULL AUTO_INCREMENT,
   `grado_nombre` VARCHAR(50) NOT NULL,
   `grado_nivel` VARCHAR(45) NULL,
-  PRIMARY KEY (`gradi_id`))
+  PRIMARY KEY (`grado_id`))
 ENGINE = InnoDB;
 
 
@@ -68,13 +68,13 @@ ENGINE = InnoDB;
 -- Table `db_movilidad_escolar`.`tbl_apoderado`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_movilidad_escolar`.`tbl_apoderado` (
-  `apoderad_id` INT NOT NULL AUTO_INCREMENT,
+  `apoderado_id` INT NOT NULL AUTO_INCREMENT,
   `apoderado_nombre` VARCHAR(255) NOT NULL,
   `apoderado_apellido` VARCHAR(45) NOT NULL,
   `apoderado_telefono` VARCHAR(255) NOT NULL,
   `apoderado_documento_identidad` VARCHAR(20) NULL,
   `tbl_parentesco_parentesco_id` INT NOT NULL,
-  PRIMARY KEY (`apoderad_id`),
+  PRIMARY KEY (`apoderado_id`),
   CONSTRAINT `fk_tbl_apoderado_tbl_parentesco`
     FOREIGN KEY (`tbl_parentesco_parentesco_id`)
     REFERENCES `db_movilidad_escolar`.`tbl_parentesco` (`parentesco_id`)
@@ -107,8 +107,8 @@ CREATE TABLE IF NOT EXISTS `db_movilidad_escolar`.`movilidad` (
   `tbl_colegio_colegio_id` INT NOT NULL,
   `tbl_alumno_alumno_id` INT NOT NULL,
   `tbl_vehiculo_vehiculo_id` INT NOT NULL,
-  `tlb_grado_gradi_id` INT UNSIGNED NOT NULL,
-  `tbl_apoderado_apoderad_id` INT NOT NULL,
+  `tbl_grado_grado_id` INT NOT NULL,
+  `tbl_apoderado_apoderado_id` INT NOT NULL,
   PRIMARY KEY (`movilidad_id`),
   CONSTRAINT `fk_movilidad_tbl_colegio1`
     FOREIGN KEY (`tbl_colegio_colegio_id`)
@@ -125,14 +125,14 @@ CREATE TABLE IF NOT EXISTS `db_movilidad_escolar`.`movilidad` (
     REFERENCES `db_movilidad_escolar`.`tbl_vehiculo` (`vehiculo_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_movilidad_tlb_grado1`
-    FOREIGN KEY (`tlb_grado_gradi_id`)
-    REFERENCES `db_movilidad_escolar`.`tlb_grado` (`gradi_id`)
+  CONSTRAINT `fk_movilidad_tbl_grado1`
+    FOREIGN KEY (`tbl_grado_grado_id`)
+    REFERENCES `db_movilidad_escolar`.`tbl_grado` (`grado_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_movilidad_tbl_apoderado1`
-    FOREIGN KEY (`tbl_apoderado_apoderad_id`)
-    REFERENCES `db_movilidad_escolar`.`tbl_apoderado` (`apoderad_id`)
+    FOREIGN KEY (`tbl_apoderado_apoderado_id`)
+    REFERENCES `db_movilidad_escolar`.`tbl_apoderado` (`apoderado_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
