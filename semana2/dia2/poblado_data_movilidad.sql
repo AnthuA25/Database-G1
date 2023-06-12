@@ -55,5 +55,3 @@ values
 ('RETORNO','MAÑANA','A','GLORIA RAMOS',120,1,1,3,2,3);
 
 
-
-
