@@ -1,6 +1,6 @@
 
-PASOS PARA DESPLEGAR PROYECTO WEB
- - python -m venv venv
- - source venv/scripts/activate
- - pip install -r requirements.txt
- - pyton run.py
+ PASOS PARA DESPLEGAR PROYECTO WEB 
+ 1 - python -m venv venv 
+ 2 - fuente venv/scripts/activate 
+ 3 - Requisitos de PIP Install -R.txt 
+ 4 - Python run.py
