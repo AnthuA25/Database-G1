@@ -1,0 +1,24 @@
+mysql -h localhost -u root -p
+
+show databases
+use mysql;
+
+
+show tables;
+describe user;
+
+select user,host from user;
+create user 'usuario1'@'localhost';
+quit
+
+mysql -u usuario1;
+
+
+crear un usuario con password:
+create user 'otro_usuario'@'localhost' identified by '1234';
+select * from user where user='root'; 
+select * from mysql.user where user='root'\G;
+
+
+
+ 

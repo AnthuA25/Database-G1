@@ -1,0 +1,20 @@
+
+grant -> dar permisos al usuario
+
+que permiso tiene el usuario:
+			show grants for 'root'@localhost;
+
+permiso al usuario a todos los objetos:
+			grant select on db_factura.* to 'otro_usuario'@'localhost';
+
+todos los privilegios:	
+		grant all privileges on db_factura.* to 'usuario'@'localhost';
+
+quitar permisos:
+		revoke insert on db_factura.* from 'otro_usuario'@'localhost';
+
+
+
+
+eliminar un usuario:
+drop user 'usuario1'@'localhost'; -- borrar usuario
