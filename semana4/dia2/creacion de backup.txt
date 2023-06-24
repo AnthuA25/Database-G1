@@ -1,0 +1,16 @@
+
+
+mysql -u root -- entramos como root
+show databases; -- verificamos que BD existen
+create database bd_factura; -- creamos BD 
+--verificamos si se creo la BD
+use bd_factura; -- usamos la BD creada
+show tables; -- verificamos si hay tables
+source C:/REPOSITORIO/facturacion.sql; -- leemos el backup en SQL
+
+drop database bd_factura; -- elimina base de datos
+
+mysql -u root bd_factura < C:/REPOSITORIO/facturacion.sql -- otra forma de restaurar desde el prompt
+
+
+FLUSH PRIVILEGES; -- actualiza los permisos
