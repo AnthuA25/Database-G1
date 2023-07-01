@@ -1,0 +1,25 @@
+Postgres:
+
+-\du -->  Listar usuarios.
+-\q --> salir
+-\c - prueba1 --> conecta a la base de datos;
+-\l --> lista las base de dtaos existentes
+-create user empleado with login password 'empleado'; --> crear usuario con contraseña
+-drop user empleado; --> eliminar usuario
+-create role administrador superuser login password 'admin'; --> creacion de rol
+-create role prueba3 with superuser;
+
+-alter user empleado with login; --> agrega contraseña 
+-alter role prueba1 with createdb; --> agrega opcion de crear una base de datos en ese rol
+- create user empleado1 with nologin; --> usuario sin login
+
+- revoke select on tbl_cliente from administrador; --> quitar permisos
+-create role desarrollo superuser login password 'desarrollo' valid until '2023-12-31 23:59:59' -- > solo se puede ingresar hasta es fecha, expira
+
+-\pasword -- poner contraseña
+
+-select current_user;
+
+
+
+
